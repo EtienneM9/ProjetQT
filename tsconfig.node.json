@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "strict": true
+  },
+  "include": ["vite.config.ts",
+  "src/api/chat/route.ts",
+  "src/api/auth/route.ts",
+  "src/api/chats/route.ts",
+  "src/lib/db/index.ts",
+  "src/lib/db/models/**/*.ts",
+  "../../lib/db/models/Message",
+  "src/**/*.ts",
+  "src/lib/auth/middleware.ts",
+  "env-loader.ts"
+]
+}
