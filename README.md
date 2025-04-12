@@ -5,7 +5,7 @@ MathMagic est un assistant pédagogique intelligent spécialisé pour aider les 
 ## Fonctionnalités 🌟
 
 - 🤖 Assistant IA personnalisé utilisant Mistral AI
-- 🎯 Quiz dynamiques générés à partir de l'historique des conversations
+- 🎯 Quiz dynamiques générés à partir de l'historique des conversations avec suivi de la progression
 - 🗣️ Reconnaissance vocale pour une interaction naturelle
 - 🔊 Synthèse vocale pour des explications claires
 - 📝 Historique des conversations persistant
@@ -66,22 +66,7 @@ src/
 - JWT Authentication
 - Express (via Vite Plugin)
 
-## Contribution 🤝
-
-Les contributions sont les bienvenues ! N'hésitez pas à :
-
-1. Fork le projet
-2. Créer une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`)
-3. Commit vos changements (`git commit -m 'Add some AmazingFeature'`)
-4. Push sur la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrir une Pull Request
 
 ## License 📄
 
 Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
-## Contact 📧
-
-Votre Nom - [@votre_twitter](https://twitter.com/votre_twitter) - email@exemple.com
-
-Lien du projet: [https://github.com/votre-username/mathmagic](https://github.com/votre-username/mathmagic)
