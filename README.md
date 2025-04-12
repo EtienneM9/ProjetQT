@@ -1,3 +1,5 @@
+# MathMagic
+
 # MathMagic 🧮✨
 
 MathMagic est un assistant pédagogique intelligent spécialisé pour aider les enfants autistes à apprendre les mathématiques de manière ludique et interactive.
@@ -70,3 +72,76 @@ src/
 ## License 📄
 
 Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+
+## Deployment Guide
+
+### Frontend Deployment (Vercel)
+
+1. Push your code to a GitHub repository
+2. Connect your repository to Vercel
+3. Add the following environment variables in your Vercel project settings:
+   - `VITE_API_URL`: URL of your deployed backend (e.g., https://your-backend-url.com)
+   - `VITE_MISTRAL_API_KEY`: Your Mistral API key
+   - `VITE_ENABLE_VOICE_SYNTHESIS`: true
+   - `VITE_ENABLE_VOICE_RECOGNITION`: true
+
+### Backend Deployment (Railway)
+
+1. Create a new project on Railway (https://railway.app)
+2. Connect your GitHub repository to Railway
+3. Add the following environment variables in your Railway project settings:
+   ```
+   PORT=5000
+   HOST=0.0.0.0
+   VITE_MONGO_CONNECTION_STRING=your_mongodb_connection_string
+   VITE_JWT_SECRET=your_jwt_secret
+   VITE_MISTRAL_API_KEY=your_mistral_api_key
+   FRONTEND_URL=your_vercel_app_url
+   ```
+4. Make sure to set `FRONTEND_URL` to your Vercel app URL for CORS
+5. Railway will automatically detect the `start` script in package.json and run the server
+
+### Local Development
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file with the required environment variables
+4. Start the development server:
+   ```bash
+   # Start frontend
+   npm run dev
+   
+   # In another terminal, start backend
+   npm run dev:server
+   ```
+
+### Environment Variables
+
+- `VITE_MONGO_CONNECTION_STRING`: MongoDB connection string
+- `VITE_JWT_SECRET`: Secret key for JWT authentication
+- `VITE_MISTRAL_API_KEY`: API key for Mistral AI
+- `PORT`: Backend server port (default: 5000)
+- `HOST`: Backend server host (default: 0.0.0.0)
+- `FRONTEND_URL`: URL of your frontend application (for CORS)
+- `VITE_API_URL`: URL of your backend API (used by frontend)
+- `VITE_ENABLE_VOICE_SYNTHESIS`: Enable voice synthesis feature
+- `VITE_ENABLE_VOICE_RECOGNITION`: Enable voice recognition feature
+
+## Troubleshooting
+
+### API Connection Issues
+If you're getting connection errors:
+1. Check that your backend is running and accessible
+2. Verify that `VITE_API_URL` is set correctly in your frontend environment
+3. Ensure CORS is properly configured with your frontend URL
+4. Check that all required environment variables are set
+
+### MongoDB Connection
+If you're having issues with MongoDB:
+1. Verify your MongoDB connection string
+2. Ensure your IP address is whitelisted in MongoDB Atlas
+3. Check that your database user has the correct permissions

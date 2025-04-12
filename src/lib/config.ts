@@ -5,6 +5,7 @@ export interface AppConfig {
   serverPort?: string;
   serverHost?: string;
   mistralApiKey?: string;
+  apiUrl?: string;
 }
 
 // Global configuration state
@@ -60,4 +61,16 @@ export function getServerConfig() {
     port: parseInt(runtimeConfig.serverPort || import.meta.env.VITE_SERVER_PORT || '5173'),
     host: runtimeConfig.serverHost || import.meta.env.VITE_SERVER_HOST || 'localhost'
   };
+}
+
+// Get API URL with fallback
+export function getApiUrl(): string {
+  // In production, use the actual backend URL
+  if (import.meta.env.PROD) {
+    return import.meta.env.VITE_API_URL || 'https://your-backend-url.com';
+  }
+  
+  // In development, use localhost with the correct port
+  const { port, host } = getServerConfig();
+  return `http://${host}:${port}`;
 }
