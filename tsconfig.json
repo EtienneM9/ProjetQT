@@ -24,13 +24,12 @@
     "types": ["vite/client", "node"]
   },
   "include": [
-    "src",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     "vite.config.ts",
-    ".eslintrc.cjs",
-    "src/api/chat/route.ts",
-    "src/api/auth/route.ts",
-    "src/api/chats/route.ts"
+    ".eslintrc.cjs"
   ],
+  "exclude": ["node_modules", "**/*.d.ts"],
   "references": [
     {
       "path": "./tsconfig.node.json"
